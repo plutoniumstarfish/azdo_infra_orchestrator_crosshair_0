@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-APP_NAME="${1:?Usage: deployment.sh <APP_NAME>}"
+APP_NAME="${1:?Usage: deployment.sh <RESOURCE_NAME>}"
 
 generate_vars() {
-  echo "[generate_vars] Generating runtime files for $APP_NAME"
+  echo "[generate_vars] Generating runtime files for $RESOURCE_NAME"
 }
 
 load_vars() {
-  echo "[load_vars] Loading generated files for $APP_NAME"
+  echo "[load_vars] Loading generated files for $RESOURCE_NAME"
 }
 
 run_terraform() {
-  echo "[terraform] Applying infra for $APP_NAME"
+  echo "[terraform] Applying infra for $RESOURCE_NAME"
 }
 
 sleep_step() {
@@ -21,7 +21,7 @@ sleep_step() {
 }
 
 
-case "$APP_NAME" in
+case "$RESOURCE_NAME" in
 
   reportsapi)
     generate_vars
@@ -37,7 +37,7 @@ case "$APP_NAME" in
     ;;
 
   *)
-    echo "unknown APP_NAME: $APP_NAME"
+    echo "unknown APP_NAME: $RESOURCE_NAME"
     exit 1
     ;;
 esac
