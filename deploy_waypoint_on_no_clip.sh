@@ -23,14 +23,14 @@ sleep_step() {
 
 case "$RESOURCE_NAME" in
 
-  reportsapi)
+   accountapi_lambda)
     generate_vars
     load_vars
     sleep_step
     run_terraform
     ;;
 
-  billingapi)
+   reportsapi_lambda)
     generate_vars
     load_vars
     run_terraform
