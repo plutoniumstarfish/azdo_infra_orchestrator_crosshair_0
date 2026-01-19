@@ -19,3 +19,25 @@ sleep_step() {
   echo "[sleep] Waiting 10 seconds"
   sleep 10
 }
+
+
+case "$APP_NAME" in
+
+  reportsapi)
+    generate_vars
+    load_vars
+    sleep_step
+    run_terraform
+    ;;
+
+  billingapi)
+    generate_vars
+    load_vars
+    run_terraform
+    ;;
+
+  *)
+    echo "unknown APP_NAME: $APP_NAME"
+    exit 1
+    ;;
+esac
