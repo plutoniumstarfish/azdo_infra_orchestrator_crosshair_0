@@ -5,6 +5,11 @@ APP_NAME="${1:?Usage: deployment.sh <RESOURCE_NAME>}"
 
 generate_vars() {
   echo "[generate_vars] Generating runtime files for $RESOURCE_NAME"
+  cat account_level.config >> $RESOURCE_NAME.dev1.config
+  cat lambda.config >> $RESOURCE_NAME.dev1.config
+  cat iac.config >> $RESOURCE_NAME.dev1.config
+  
+
 }
 
 load_vars() {
