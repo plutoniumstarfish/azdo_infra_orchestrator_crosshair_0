@@ -2,7 +2,7 @@
 set -e
 
 (
-  source ./scripts-impulse101/load_vars.sh "$APP" "$ENV"
+  source ./scripts-impulse101/load_vars_carbine_m4a1.sh "$APP" "$ENV"
 
   echo "Deploying $APP to $ENV"
   terraforms
